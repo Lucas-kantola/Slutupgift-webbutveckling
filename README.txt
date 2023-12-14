@@ -1,4 +1,4 @@
-##The user storage is set up as following:##
+## The user storage is set up as following:
 const user = {
     uName: uName.toLowerCase(),
     name: name,
@@ -7,7 +7,7 @@ const user = {
     salt: undefined,
 }
 
-##signup Status codes and messages:##
+## signup Status codes and messages:
 
     status : 400,
     message : "Invalid uName"
@@ -37,7 +37,7 @@ const user = {
     message : "Invalid password attempt"
     The password used is an attempt to get behind the defences of a SQL or any type of SQ database
 
-##login Status codes and messages:##
+## login Status codes and messages:
 
     status : 401, 
     message : "User unauthorized"
