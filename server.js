@@ -115,6 +115,7 @@ app.get("/welback", function(req, res) {
     else{
         //refresh the token for relogged user
         let newToken = uuid.v4()
+        let name = userSession.user.name
         console.log(newToken)
         const now = new Date()
         const expiresAt = new Date(+now + sessionTTL * 1000)
@@ -128,7 +129,7 @@ app.get("/welback", function(req, res) {
         res.cookie("session-token", newToken, {expires: expiresAt})
         res.json({
             status: 200,
-            message: `Welcome back ${userSession.user.ID}`
+            message: `Welcome back ${name}`
         })
     }
     res.end()

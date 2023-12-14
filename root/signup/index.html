@@ -9,20 +9,35 @@
 </head>
 <body>
     <div class="logo">
-        <h1 class="title">Sign&nbsp&nbspUp&nbsp&nbspTo<br>KnockOut!</h1>
+        <h1 class="title">Sign&nbsp&nbspUp&nbsp&nbspTo<br><h1 class="hider">&nbsp&nbspKnockout!</h1></h1>
+
+        <img src="./images/knockout.png" alt="knockout logo" class="splash" onclick="window.location.href = './'">
     </div>
     <form method="dialog" id="submitter">
-        <input type="email" name="email" id="email-input" placeholder="Email example@mail.com">
-        <input type="text" name="name" id="name-input" placeholder="Name">
-        <input type="text" name="uName" id="username-input" placeholder="Username">
-        <input type="password" name="password" id="password-input" placeholder="Password">
-        <h5 class="smal-text" for="password">Password must be 8 characters and must contain a symbols</h5>
-        <button id="signup">Sign-up</button>
-    </form>
+        <input type="email" name="email" id="email-input" placeholder="Email example@mail.com" autocomplete="email">
+        <input type="text" name="name" id="name-input" placeholder="Name" autocomplete="name">
+        <input type="text" name="uName" id="username-input" placeholder="Username" autocomplete="username">
+        <input type="password" name="password" id="password-input" placeholder="Password" autocomplete="new-password">
+        <ul>
+            <li>
+                <h5 class="small-text">Password must be 8 characters and must contain a symbol</h5>
+            </li>
+            <li>
+                <h5 class="small-text">Username can only contain letters</h5>
+            </li>
+        </ul>
 
+        <p class="small-text" id="feedback">TESTESTESTESTESTESTESTES</p> <!--Error Text-->
+
+        <button id="signup">Sign-up</button>
+
+        <div class="bottom">
+            <label for="signup">Already have an account?</label>
+            <a href="http://127.0.0.1:8080/login/">Login</a>
+        </div>
+    </form>
     
-    
-    <h5 class="smal-text">By clicking "Sign-up", you agree to<a href="#">&nbspour Terms of Use</a>,<a href="#">&nbspour Privacy Policy</a>, and<a href="#">&nbspour Disclaimer</a></h5>
+    <h5 class="small-text">By clicking "Sign-up", you agree to<a href="#">&nbspour Terms of Use</a>,<a href="#">&nbspour Privacy Policy</a>, and<a href="#">&nbspour Disclaimer</a></h5>
 </body>
 <script src="signup.js"></script>
 </html>

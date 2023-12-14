@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap');
+@keyframes splash {
+    0%{
+        transform: rotateZ(0deg);
+        scale: .5;
+    }
+    50%{
+        transform: rotateZ(-10deg);
+        scale: 1;
+    }
+    100%{
+        transform: rotateZ(0deg);
+        scale: .5;
+    }
+}
 
 @media (min-width: 1024px) {
     body{
@@ -15,6 +29,7 @@
 
     .logo{
         display: flex;
+        flex-direction: column;
         width: 65vw;
         height: 100vh;
         justify-content: center;
@@ -35,6 +50,16 @@
         font-size: 80px;
         font-weight: 200;
         color: limegreen;
+    }
+
+    .hider{
+        display: none !important;
+    }
+    
+    .splash{
+        display: flex;
+        animation: splash 1.5s ease-in-out infinite;
+        cursor: pointer;
     }
 
     form {
@@ -76,6 +101,36 @@
     }
     form > input:focus{
         outline: limegreen 1px solid;
+    }
+
+    form > ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    form .small-text{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        width: 100%;
+        height: 30px;
+        font-weight: 100;
+        
+        font-family: "Roboto", sans-serif;
+        background-color: #222222;
+        color: white;
+    }
+    form > .small-text{
+        justify-content: center !important;
+        color: lightcoral;
+    }
+
+    form li::marker{
+        color: limegreen;
     }
 
     form > button#signup {
@@ -193,7 +248,7 @@
         cursor: pointer;
     }
 
-    body > .smal-text{
+    body > .small-text{
         display: flex;
         position: absolute;
         bottom: 0;
@@ -211,7 +266,7 @@
         background-color: #222222;
         color: white;
     }
-    body > .smal-text > a{
+    body > .small-text > a{
         text-decoration: none;
         color: limegreen;
     }
@@ -240,11 +295,30 @@
 
     }
 
-    .logo h1{
+    .logo > .title{
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
         text-align: center;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+
+        font-size: 40px;
+        font-weight: 200;
+        color: limegreen;
+    }
+
+    .splash{
+        display: none;
+    }
+
+    .hider{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        text-align: left;
         width: 100%;
         height: auto;
         margin: 0;
@@ -296,6 +370,15 @@
         outline: limegreen 1px solid;
     }
 
+    form li > h5{
+        justify-content: left !important;
+        color: white !important;
+    }
+
+    form li::marker{
+        color: limegreen;
+    }
+
     form > button#signup {
         display: inline-block;
         margin-top: auto;
@@ -409,11 +492,8 @@
         color: #4dc3ea;
     }
 
-    body > .smal-text{
+    .small-text{
         display: flex;
-        position: absolute;
-        bottom: 0;
-        left: 0;
         justify-content: center;
         align-items: center;
         
@@ -427,7 +507,12 @@
         background-color: #222222;
         color: white;
     }
-    body > .smal-text > a{
+    body > .small-text{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    body > .small-text > a{
         text-decoration: none;
         color: limegreen;
     }

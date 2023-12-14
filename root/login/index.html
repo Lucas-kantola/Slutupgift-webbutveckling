@@ -5,17 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="297152540815-08dhd6t2h8mi08t9upbvtnccf44mrfei.apps.googleusercontent.com">
     <title>Login</title>
 </head>
 <body>
     <div class="logo">
         <h1 class="title">Welcome To</h1>
-        <img src="./img/knockout.png" alt="">
+        <img src="./images/knockout.png" alt="Knockout logo" class="splash" onclick="window.location.href = './'">
     </div>
-    <form method="post">
+    <form method="dialog">
+        <!--Normal inloggning-->
         <h3>Login</h3>
-        <input type="text" name="uRef" id="uRef-input" placeholder="username or email address">
+        <input type="text" name="uRef" id="uRef-input" placeholder="username or email address" >
         <input type="password" name="password" id="password-input" placeholder="password">
+        <!--Normal inloggning-->
+
+        <div class="g-signin2 gogSign" data-onsuccess="onSignIn"></div> <!--Google inloggning-->
+
+        <p class="small-text" id="feedback"></p> <!--Error Text-->
+
         <button id="login">Login</button>
 
         <div class="bottom">

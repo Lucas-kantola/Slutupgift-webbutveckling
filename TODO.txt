@@ -1,16 +1,9 @@
 Login{
-    cookie login
-    fixa en bätte feedback för användar input i login
-    lite css är alltid kul :)
+    leta buggar...
 }
 
 signup{
     Fixa en bättre feedback för användar input i signup
-    lite css är alltid kul :)
-}
-
-welback{
-    fixa att den inte pajar med cookies som ändras.
 }
 
 game{

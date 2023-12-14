@@ -1,5 +1,8 @@
+const feedback = document.getElementById("feedback")
+
+//decodar cookie info
 function getCookie(cname){
-    console.log("getting COokie");
+    console.log("getting Cookie");
     let name = cname + "="
     let decoded = decodeURIComponent(document.cookie)
     let ca = decoded.split(";")
@@ -15,6 +18,7 @@ function getCookie(cname){
     return ""
 }
 
+//kollar ifall användaren har en token redan och loggar in dem med den ifall isåfall
 document.addEventListener("DOMContentLoaded", function(){
     if(getCookie("session-token") != ""){
         console.log("sending cookie");
@@ -22,8 +26,25 @@ document.addEventListener("DOMContentLoaded", function(){
         http.open("GET", "/welback")
         http.onload = function(){
             if(http.status == 200){
-                console.log("User authenticated successfully");
-                console.log(http.responseText);
+                let res = JSON.parse(http.responseText)
+
+                if (res.status == 401 && res.message == "No cookies for me? No login for you!😤") {
+                    console.log("No cookies for me? No login for you!😤");
+                }
+                else if (res.status == 401 && res.message == "No token provided") {
+                    console.log("No token provided");
+                }
+                else if (res.status == 401 && res.message == "userSession could not be found") {
+                    console.log("Server could not find userSession");
+                }
+                else if (res.status == 401 && res.message == "token expired") {
+                    console.log("token expired");
+                }
+                else if (res.status == 200){
+                    console.log("welcome back user");
+                    window.location.replace("/game/")
+                }
+                
             } else {
                 console.error("Error: " + http.status);
                 console.error(http.responseText);
@@ -35,8 +56,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 })
 
+//Väntar på submit för form för att sedan skicka datan till servern
 document.getElementById('login').addEventListener('click', function(event){    
     if(validInput()){
+        feedback.innerText = ""
         console.log("input valid");
         const http = new XMLHttpRequest()
         http.open("POST", "/login")
@@ -45,7 +68,19 @@ document.getElementById('login').addEventListener('click', function(event){
         http.onload = function(){
             
             if(http.status == 200){
-                document.location.href = "http://localhost:8080/game"
+                console.log(http.responseText)
+                let res = JSON.parse(http.responseText)
+
+                if (res.status = 401 && res.message == "User unauthorized") {
+                    feedback.innerText = "Incorrect password. Try again!"
+                }
+                if (res.status = 400 && res.message == "User not found") {
+                    feedback.innerText = "Incorrect email or username"
+                }
+                if (res.status = 200 && res.message == "User authenticated") {
+                    window.location.replace("/game/")
+                }
+
             }
             else{
                 console.error("Error: " + http.status)
@@ -66,30 +101,43 @@ document.getElementById('login').addEventListener('click', function(event){
     }
 })
 
-function validInput(){
+//Validerar input
+function validInput() {
     console.log("checking input validity");
-    const u = document.getElementById('uRef-input').value
-    const p = document.getElementById('password-input').value
+    const uInput = document.getElementById('uRef-input');
+    const pInput = document.getElementById('password-input');
 
-    if(u != null && p != null){
-        if(u.length >= 1 && 
-        /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(p) &&
-        (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(u) || /^\w+$/.test(u))){
-                console.log("valid input confirmed")
-                return true
-            }
-        else {
-            //FIXUp this abit in the future
-            return false
+    if (uInput !== null && pInput !== null) {
+        let isValid = true;
+
+        if (uInput.value.length < 1) {
+            uInput.style.outline = "1px red solid";
+            isValid = false;
+        } else {
+            uInput.style.outline = ""; // Reset outline if valid
         }
-        
-    }
-    else{
-        console.error("Could not find Elements")
+
+        if (!/^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(pInput.value)) {
+            pInput.style.outline = "1px red solid";
+            isValid = false;
+        } else {
+            pInput.style.outline = ""; // Reset outline if valid
+        }
+
+        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(uInput.value) || /^\w+$/.test(uInput.value))) {
+            uInput.style.outline = "1px red solid";
+            isValid = false;
+        } else {
+            uInput.style.outline = ""; // Reset outline if valid
+        }
+
+        if (isValid) {
+            console.log("valid input confirmed");
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        console.error("Could not find Elements");
     }
 }
-
-function redSign(){
-    document.location.href = "http://127.0.0.1:8080/signup/"
-}
-
