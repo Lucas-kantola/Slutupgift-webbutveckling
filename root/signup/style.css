@@ -2,15 +2,15 @@
 @keyframes splash {
     0%{
         transform: rotateZ(0deg);
-        scale: .5;
+        scale: .35;
     }
     50%{
         transform: rotateZ(-10deg);
-        scale: 1;
+        scale: .85;
     }
     100%{
         transform: rotateZ(0deg);
-        scale: .5;
+        scale: .35;
     }
 }
 
@@ -71,8 +71,8 @@
         justify-content: center;
 
         background-color: #222222;
-        width: 20vw;
-        height: 60vh;
+        width: 30vw;
+        height: 80vh;
         border: 1px rgb(42, 173, 42) solid;
         border-radius: 10px;
     }

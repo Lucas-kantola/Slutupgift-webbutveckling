@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap');
-
 @keyframes splash {
     0%{
         transform: rotateZ(0deg);
-        scale: .5;
+        scale: .35;
     }
     50%{
         transform: rotateZ(-10deg);
-        scale: 1;
+        scale: .85;
     }
     100%{
         transform: rotateZ(0deg);
-        scale: .5;
+        scale: .35;
     }
 }
 
@@ -87,7 +86,7 @@
 
         background-color: #222222;
         width: 20vw;
-        height: 60vh;
+        height: 80vh;
         border: 1px rgb(42, 173, 42) solid;
         border-radius: 10px;
     }
@@ -240,7 +239,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     body{
         margin: 0;
         padding: 0;
