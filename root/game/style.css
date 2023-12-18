@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: black;
+}
+
+/*Start of the styling for the header section*/
+header{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #202020;
+
+    border-bottom: 20px;
+}
+header > a{
+    text-decoration: none;
+    font-size: 20px;
+
+    color: limegreen;
+    font-family: "Roboto", sans-serif;
+    margin-left: 10px;
+}
+header > p{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;}
+header > #logout{
+    display: flex;
+    border: none;
+    background-color: limegreen;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    align-items: center;
+
+    margin-right: 10px;
+}
+/*End of the styling for the header section*/
+/*Start of the styling for the main section*/
+main{
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    height: 90vh;
+}
+main > h1{
+    margin: 0;
+    margin-inline: auto;
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: 'Monoton', sans-serif;
+    color: limegreen;
+    font-weight: 100;
+    letter-spacing: normal;
+    font-kerning: none;
+}
+main>.numSelect-container{
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    margin: 20px auto;
+    background-color: #202020;
+    border-radius: 30px;
+}
+main > .numSelect-container > h4{
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: limegreen;
+}
+.numSelect-container > .button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.button-container > .nums{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+} 
+.numSelect-container > p{
+    color: limegreen;
+    margin: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.nums input[type="radio"] {
+    display: none;
+}
+
+.nums label:has(> input[type="radio"]:checked) {
+    outline: white 2px solid;
+}
+
+.nums > label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nums > label:hover{
+    filter: brightness(85%);
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: limegreen;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+    filter: brightness(85%);
+}
+
+.game-container{
+    display: none;
+    z-index: 10;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="./credentials.js" defer></script>
+    <script src="./game.js" defer></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knockout!</title>
+</head>
+<body>
+    <!--Start of header section-->
+    <header>
+        <a href="./">Game Play</a>
+        <p id="name">Temp Tempersson</p>
+        <button type="button" id="logout">Log out</button>
+    </header>
+    <!--End of header section-->
+    <!--Start of main section-->
+    <main>
+        <h1>Knockout!</h1>
+        <div class="numSelect-container">
+            <h4>Choose your KnockOut number!</h4>
+            <div class="button-container">
+                <div class="nums">
+                    <label for="button6">6<input type="radio" id="button6" name="number" value="6"></label>
+                    <label for="button7">7<input type="radio" id="button7" name="number" value="7"></label>
+                    <label for="button8">8<input type="radio" id="button8" name="number" value="8"></label>
+                    <label for="button9">9<input type="radio" id="button9" name="number" value="9"></label>
+                </div>
+                <button id="playButton">Play</button>
+            </div>
+            <p>Choose a KnockOut number!</p>
+        </div>
+        <div class="game-container">
+            <h3 class="selected-number">Your KnockOut number is X</h3>
+            <img src="./images/d1.png" alt="number 1" id="dice1">
+            <img src="./images/d1.png" alt="number 1" id="dice2">
+            <button type="button" id="roll">Roll</button>
+            <div class="values">
+                <p id="dieValues">Dice(1:1)</p>
+                <p id="score">Score: 0 points</p>
+            </div>
+        </div>
+    </main>
+    <!--End of main section-->
+</body>
+</html>

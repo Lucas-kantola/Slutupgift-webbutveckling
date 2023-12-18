@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
         http.send()
-
     }
-
 })
 
 //Väntar på submit för form för att sedan skicka datan till servern
@@ -70,7 +68,6 @@ document.getElementById('login').addEventListener('click', function(event){
             if(http.status == 200){
                 console.log(http.responseText)
                 let res = JSON.parse(http.responseText)
-
                 if (res.status = 401 && res.message == "User unauthorized") {
                     feedback.innerText = "Incorrect password. Try again!"
                 }

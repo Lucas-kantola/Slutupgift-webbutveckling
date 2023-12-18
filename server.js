@@ -46,6 +46,7 @@ updateUList()
 
 
 function uExists(reference){
+    updateUList()
     return users.some((user) => user.uName.toLowerCase() === reference.toLowerCase()) || users.some((user) => user.mail.toLowerCase() === reference.toLowerCase())
 }
 
@@ -290,7 +291,10 @@ app.post("/signup", function(req, res){
                                 throw new Error("error occured while writing credentials to file")
                             }
                             console.log("responding 200");
-                            res.sendStatus(200).end()
+                            res.json({
+                                status: 200,
+                                message: "User created"
+                            }).end()
                         })
                     }
                 }

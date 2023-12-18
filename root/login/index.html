@@ -11,14 +11,14 @@
 </head>
 <body>
     <div class="logo">
-        <h1 class="title">Welcome To</h1>
-        <img src="./images/knockout.png" alt="Knockout logo" class="splash" onclick="window.location.href = './'">
+        <h1 class="title">Sign&nbsp&nbspUp&nbsp&nbspTo<br><h1 class="hider">&nbsp&nbspKnockout!</h1></h1>
+        <img src="./images/knockout.png" alt="knockout logo" class="splash" onclick="window.location.href = './'">
     </div>
     <form method="dialog">
         <!--Normal inloggning-->
         <h3>Login</h3>
-        <input type="text" name="uRef" id="uRef-input" placeholder="username or email address" >
-        <input type="password" name="password" id="password-input" placeholder="password">
+        <input type="text" name="uRef" id="uRef-input" placeholder="username or email address" autocomplete="username email">
+        <input type="password" name="password" id="password-input" placeholder="password" autocomplete="current-password">
         <!--Normal inloggning-->
 
         <div class="g-signin2 gogSign" data-onsuccess="onSignIn"></div> <!--Google inloggning-->

@@ -9,6 +9,10 @@ const user = {
 
 ## signup Status codes and messages:
 
+    status : 200,
+    message: "User created"
+    User successfully created
+
     status : 400,
     message : "Invalid uName"
     Username is not only defined by the scope of regex wordcharacters 
