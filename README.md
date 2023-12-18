@@ -1,11 +1,14 @@
 ## The user storage is set up as following:
-const user = {
-    uName: uName.toLowerCase(),
-    name: name,
-    mail: mail.toLowerCase(), 
-    hash: undefined,
-    salt: undefined,
-}
+```JSON
+    const user = {
+        uName: uName.toLowerCase(),
+        name: name,
+        mail: mail.toLowerCase(), 
+        hash: undefined,
+        salt: undefined,
+    }
+```
+
 
 ## signup Status codes and messages:
 
