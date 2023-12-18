@@ -7,6 +7,6 @@ signup{
 }
 
 game{
-    init welback
     make it
+    ta bort kommentarerna så man blir skickad till login om cookie inte finns 
 }
