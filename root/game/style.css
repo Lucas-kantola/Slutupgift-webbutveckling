@@ -65,7 +65,7 @@ main > h1{
     letter-spacing: normal;
     font-kerning: none;
 }
-main>.numSelect-container{
+main>.numSelect-container, main > .game-container{
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
@@ -129,6 +129,27 @@ main > .numSelect-container > h4{
     filter: brightness(85%);
 }
 
+.game-container > .die {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.die > h3{
+    text-align: center;
+    justify-self: center;
+    align-self: flex-start;
+    color: limegreen;
+
+    margin-inline: 20px;
+    margin-top: -40px;
+}
+
+.die > img {
+    width: 100px;
+    aspect-ratio: 1;
+}
+
 button {
     display: inline-block;
     padding: 10px 20px;
@@ -146,7 +167,3 @@ button:hover{
     filter: brightness(85%);
 }
 
-.game-container{
-    display: none;
-    z-index: 10;
-}

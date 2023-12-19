@@ -6,7 +6,7 @@
         mail: mail.toLowerCase(), 
         hash: undefined,
         salt: undefined,
-    }
+    }   
 ```
 
 

@@ -20,7 +20,7 @@
     <!--Start of main section-->
     <main>
         <h1>Knockout!</h1>
-        <div class="numSelect-container">
+        <div class="numSelect-container" id="buttonCont">
             <h4>Choose your KnockOut number!</h4>
             <div class="button-container">
                 <div class="nums">
@@ -31,17 +31,20 @@
                 </div>
                 <button id="playButton">Play</button>
             </div>
-            <p>Choose a KnockOut number!</p>
+            <p id="feedback">Choose a KnockOut number!</p>
         </div>
-        <div class="game-container">
-            <h3 class="selected-number">Your KnockOut number is X</h3>
-            <img src="./images/d1.png" alt="number 1" id="dice1">
-            <img src="./images/d1.png" alt="number 1" id="dice2">
+        <div class="game-container" id="gameCont">
+            <div class="die">
+                <img src="./images/dice/d1.png" alt="number 1" id="dice1">
+                <h3 class="selected-number">Your KnockOut number is X</h3>
+                <img src="./images/dice/d1.png" alt="number 1" id="dice2">
+            </div>
             <button type="button" id="roll">Roll</button>
             <div class="values">
                 <p id="dieValues">Dice(1:1)</p>
                 <p id="score">Score: 0 points</p>
             </div>
+            <button id="reset" type="button">Play Again?</button>
         </div>
     </main>
     <!--End of main section-->

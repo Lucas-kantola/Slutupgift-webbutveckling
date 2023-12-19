@@ -9,4 +9,5 @@ signup{
 game{
     make it
     ta bort kommentarerna så man blir skickad till login om cookie inte finns 
+    fixa så att man inte kan rulla längre än när man hade förlorat på något jävla vänster. 
 }
