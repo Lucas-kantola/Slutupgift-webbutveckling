@@ -166,4 +166,8 @@ button {
 button:hover{
     filter: brightness(85%);
 }
+button:disabled{
+    filter: brightness(50%);
+    cursor: default;
+}
 
