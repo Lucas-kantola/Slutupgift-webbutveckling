@@ -4,6 +4,7 @@ const playButton = document.getElementById("playButton");
 const gameContainer = document.getElementById("gameCont")
 const buttonContainer = document.getElementById("buttonCont")
 const feedback = document.getElementById("feedback")
+const combinedValues = document.getElementById("combinedValues")
 
 //dice and game variables
 const dice1 = document.getElementById("dice1")
@@ -39,7 +40,7 @@ playButton.addEventListener("click", () =>{
         }
     }
 
-    document.getElementsByClassName("selected-number")[0].innerText = selectedRadio.value
+    document.getElementsByClassName("selected-number")[0].innerText = "Your KnockOut number is " + selectedRadio.value
 
     if(selectedRadio != null){
         gameContainer.style.display = "flex"
@@ -64,14 +65,17 @@ rollButton.addEventListener("click", async () => {
         console.log(selectedRadio.value);
         console.log((value1 + value2) == selectedRadio.value);
         score += value1 + value2
-        rollText.innerText = `Dice: (${value1}:${value2})`
+        rollText.innerText = `Dice: ${value1} : ${value2}`
+        combinedValues.innerText = `Roll Score: ${value1 + value2}`
         scoreText.textContent = `Score: ${score} points`
     
         if((value1 + value2) == selectedRadio.value || gameLost){
             gameLost = true
             rollButton.disabled = true;
             playAgainButton.disabled = false;
+            let audioPlayer = new Audio("./sounds/GameOver.mp3")
             await timer(500)
+            audioPlayer.play()
             const image = document.createElement("img")
             image.src = "./images/knockout.png"
             image.style.position = "absolute"
@@ -109,7 +113,7 @@ async function dieRoll(dice) {
         "./sounds/2.mp3"
     ]
     const rollSound = Math.floor(Math.random() * 2)
-    var audioPlayer = new Audio(sounds[rollSound])
+    let audioPlayer = new Audio(sounds[rollSound])
     audioPlayer.play()
 
     // Randomize final faces

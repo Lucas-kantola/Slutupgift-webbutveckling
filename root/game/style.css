@@ -106,6 +106,9 @@ main > .numSelect-container > h4{
     display: none;
 }
 
+/*Ibland är man bara lite galen
+* Sätter en outline på radion som är markerad
+*/
 .nums label:has(> input[type="radio"]:checked) {
     outline: white 2px solid;
 }
@@ -132,21 +135,23 @@ main > .numSelect-container > h4{
 .game-container > .die {
     display: flex;
     justify-content: center;
+    margin: 20px;
+    gap: 20px;
     align-items:center;
 }
 
-.die > h3{
+.game-container > h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
     text-align: center;
-    justify-self: center;
     align-self: flex-start;
     color: limegreen;
-
-    margin-inline: 20px;
-    margin-top: -40px;
+    margin-inline: auto;
 }
 
 .die > img {
-    width: 100px;
+    width: 150px;
     aspect-ratio: 1;
 }
 
@@ -171,3 +176,13 @@ button:disabled{
     cursor: default;
 }
 
+.game-container > .values{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    border: 2px solid gray;
+    padding: 0 25px;
+    margin-top: 20px;
+    color: limegreen;
+    font-family: "Roboto", sans-serif;
+}
