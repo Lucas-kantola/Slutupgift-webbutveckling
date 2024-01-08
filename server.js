@@ -55,6 +55,8 @@ function findU(reference){
 }
 
 app.get("/logout", function(req, res) {
+    console.log(req);
+    console.log(req.cookies);
     if(!req.cookies){
         res.statusStatus(401).end()
         return
@@ -67,7 +69,7 @@ app.get("/logout", function(req, res) {
     }
 
     delete sessions[token]
-
+    console.log(sessions);
     res.clearCookie("session-token")
     res.end()
 })

@@ -30,7 +30,7 @@
     .logo{
         display: flex;
         flex-direction: column;
-        width: 65vw;
+        width: 60vw;
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -89,7 +89,7 @@
         justify-content: center;
 
         background-color: #222222;
-        width: 20vw;
+        width: 30vw;
         height: 80vh;
         border: 1px rgb(42, 173, 42) solid;
         border-radius: 10px;
@@ -216,7 +216,7 @@
         background-color: #181818;
         padding: 20px;
     }
-    form > .bottom > label{
+    form > .bottom > p{
         display: flex;
         text-align: center;
         justify-content: center;

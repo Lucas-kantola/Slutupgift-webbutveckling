@@ -74,31 +74,57 @@ document.getElementById("submitter").addEventListener('submit', function(event){
     }
 })
 
-function validInput(){
-    const u = document.getElementById('username-input').value
-    const n = document.getElementById('name-input').value
-    const e = document.getElementById('email-input').value
-    const p = document.getElementById('password-input').value
+function validInput() {
+    console.log("checking input validity");
+    const uInput = document.getElementById('username-input');
+    const nInput = document.getElementById('name-input');
+    const eInput = document.getElementById('email-input');
+    const pInput = document.getElementById('password-input');
+    const feedback = document.getElementById('feedback');
 
-    console.log(/^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(p));
-    console.log(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e));
+    if (uInput !== null && nInput !== null && eInput !== null && pInput !== null && feedback !== null) {
+        let isValid = true;
 
-    if(u != null && n != null && p != null && e != null){
-        if(u.length >= 1 && n.length >= 1 && 
-        /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(p) &&
-        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e)){
-                console.log("valid input confirmed")
-                return true
-            }
-        else {
-            console.log("invalid input")
-            //FIXUp this abit in the future
-            return false
+        if (uInput.value.length < 1) {
+            uInput.style.outline = "1px red solid";
+            feedback.innerText = "Please enter a username";
+            isValid = false;
+        } else {
+            uInput.style.outline = ""; // Reset outline if valid
         }
-        
-    }
-    else{
-        console.error("Could not find Elements")
+
+        if (nInput.value.length < 1) {
+            nInput.style.outline = "1px red solid";
+            feedback.innerText = "Please enter your name";
+            isValid = false;
+        } else {
+            nInput.style.outline = ""; // Reset outline if valid
+        }
+
+        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(eInput.value))) {
+            eInput.style.outline = "1px red solid";
+            feedback.innerText = "Invalid email address";
+            isValid = false;
+        } else {
+            eInput.style.outline = ""; // Reset outline if valid
+        }
+
+        if (!/^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(pInput.value)) {
+            pInput.style.outline = "1px red solid";
+            feedback.innerText = "Password must contain at least one symbol and be 8 characters long";
+            isValid = false;
+        } else {
+            pInput.style.outline = ""; // Reset outline if valid
+        }
+
+        if (isValid) {
+            feedback.innerText = ""; // Reset feedback if all inputs are valid
+            console.log("valid input confirmed");
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        console.error("Could not find Elements");
     }
 }
-

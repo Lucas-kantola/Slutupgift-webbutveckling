@@ -88,6 +88,7 @@ rollButton.addEventListener("click", async () => {
             await timer(3000);
             image.remove()
             playAgainButton.style.display = "flex";
+            playAgainButton.style.marginTop = "20px"
             playAgainButton.addEventListener("click", resetGame);
         }
     }

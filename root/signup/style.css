@@ -30,7 +30,7 @@
     .logo{
         display: flex;
         flex-direction: column;
-        width: 65vw;
+        width: 60vw;
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -131,6 +131,76 @@
 
     form li::marker{
         color: limegreen;
+    }
+    
+    form > button#signup {
+        display: inline-block;
+        margin-top: auto;
+        position: relative;
+        left: 10px;
+        width: calc(100% - 20px);
+        height: 15%;
+        
+        appearance: button;
+        background-color: green;
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 4px;
+        box-sizing: border-box;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        line-height: 20px;
+        outline: none;
+        overflow: visible;
+        text-align: center;
+        text-transform: uppercase;
+        touch-action: manipulation;
+        transform: translateZ(0);
+        transition: filter .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    form > button#signup::after {
+    background-clip: padding-box;
+    background-color: limegreen;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    }
+
+    form > button#signup:focus{
+        outline: wheat 3px solid;
+    }
+    form > button#signup:focus:active{
+        outline: none;
+    }
+
+    form > button#signup:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+    }
+
+    form > button#signup:disabled {
+    cursor: auto;
+    }
+
+    form > button#signup:active {
+    border-width: 4px 0 0;
+    background: none;
     }
 
     form > .bottom{

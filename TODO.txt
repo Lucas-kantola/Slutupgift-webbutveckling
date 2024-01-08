@@ -3,11 +3,10 @@ Login{
 }
 
 signup{
-    Fixa en bättre feedback för användar input i signup
+    leta buggar...
 }
 
 game{
-    make it
-    ta bort kommentarerna så man blir skickad till login om cookie inte finns 
-    fixa så att man inte kan rulla längre än när man hade förlorat på något jävla vänster. 
+    ändra logout om man inte är inloggad
+    sätt ett filter på spelet och stäng det om man inte är inloggad
 }

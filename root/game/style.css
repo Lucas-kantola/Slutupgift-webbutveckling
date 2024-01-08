@@ -8,40 +8,52 @@ body{
 }
 
 /*Start of the styling for the header section*/
-header{
+header {
     display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    height: 10vh;
     justify-content: space-between;
     align-items: center;
-
+    height: 10vh;
     background-color: #202020;
-
     border-bottom: 20px;
 }
-header > a{
+header .left {
+    justify-content: flex-start;
+    display: flex;
+    margin-right: auto;
+    margin-left: 20px;
+    width: 100%;
+}
+header .right {
+    justify-content: flex-end;
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+    width: 100%;
+}
+header .center{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+.left a {
     text-decoration: none;
-    font-size: 20px;
-
+    font-size: 40px;
     color: limegreen;
     font-family: "Roboto", sans-serif;
-    margin-left: 10px;
 }
-header > p{
-    color: white;
+.center #name {
+    color: limegreen;
     font-family: "Roboto", sans-serif;
-    font-weight: 100;}
-header > #logout{
-    display: flex;
-    border: none;
-    background-color: limegreen;
-    color: white;
-    height: 30px;
-    border-radius: 10px;
-    align-items: center;
-
-    margin-right: 10px;
+    font-weight: 100;
+    font-size: 25px;
+    margin: 0;
+}
+.center #log {
+    margin: 0;
+}
+header > #id{
+    margin: 0;
 }
 /*End of the styling for the header section*/
 /*Start of the styling for the main section*/
@@ -57,7 +69,7 @@ main{
 main > h1{
     margin: 0;
     margin-inline: auto;
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 50px;
     font-family: 'Monoton', sans-serif;
     color: limegreen;
@@ -111,6 +123,10 @@ main > .numSelect-container > h4{
 */
 .nums label:has(> input[type="radio"]:checked) {
     outline: white 2px solid;
+}
+.nums label:has(> input[type="radio"]:disabled:hover) {
+    cursor: default;
+    filter: brightness(100%);
 }
 
 .nums > label {
