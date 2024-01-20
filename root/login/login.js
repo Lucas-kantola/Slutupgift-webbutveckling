@@ -69,10 +69,10 @@ document.getElementById('login').addEventListener('click', function(event){
                 console.log(http.responseText)
                 let res = JSON.parse(http.responseText)
                 if (res.status = 401 && res.message == "User unauthorized") {
-                    feedback.innerText = "Incorrect password. Try again!"
+                    feedback.innerText = "Wrong password. Try again!"
                 }
                 if (res.status = 400 && res.message == "User not found") {
-                    feedback.innerText = "Incorrect email or username"
+                    feedback.innerText = "Could not find account with email or username"
                 }
                 if (res.status = 200 && res.message == "User authenticated") {
                     window.location.replace("/game/")
@@ -97,10 +97,10 @@ document.getElementById('login').addEventListener('click', function(event){
         console.log("data attempt has been sent")
     }
 })
-
-//Validerar input
+//Validerar input innan server. 
 function validInput() {
-    console.log("checking input validity");
+    console.log("Checking input validity");
+
     const uInput = document.getElementById('uRef-input');
     const pInput = document.getElementById('password-input');
 
@@ -108,33 +108,31 @@ function validInput() {
         let isValid = true;
 
         if (uInput.value.length < 1) {
+            console.log("Invalid input: Username cannot be empty");
             uInput.style.outline = "1px red solid";
             isValid = false;
         } else {
             uInput.style.outline = ""; // Reset outline if valid
         }
 
-        if (!/^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(pInput.value)) {
-            pInput.style.outline = "1px red solid";
-            isValid = false;
-        } else {
-            pInput.style.outline = ""; // Reset outline if valid
+        if (pInput.value.length < 1) {
+            uInput.style.outline = "1px red solid"
+            isValid = false
         }
-
-        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(uInput.value) || /^\w+$/.test(uInput.value))) {
-            uInput.style.outline = "1px red solid";
-            isValid = false;
-        } else {
+        else {
             uInput.style.outline = ""; // Reset outline if valid
         }
 
         if (isValid) {
-            console.log("valid input confirmed");
+            console.log("Valid input confirmed");
             return true;
         } else {
+            console.log("Invalid input detected");
             return false;
         }
-    } else {
+    } 
+    else {
+        feedback.innerText = "Oops! Something went wrong"
         console.error("Could not find Elements");
     }
 }

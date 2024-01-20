@@ -483,10 +483,11 @@
         padding: 0;
         margin: 0;
     }
-    form > .bottom > a{
+    form > .bottom > a {
         background-color: #181818;
-        text-decoration: none;
         color: #009fd9;
+        font-family: "Roboto", sans-serif;
+        text-decoration: none;
         border: none;
         font-size: 15px;
     }

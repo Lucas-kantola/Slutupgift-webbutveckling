@@ -1,3 +1,10 @@
+## Dependencies
+* uuid
+* cookie-parser
+* express
+* bcrypt
+* fs
+
 ## The user storage is set up as following:
 ```JSON
     const user = {

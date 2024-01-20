@@ -54,6 +54,10 @@ function findU(reference){
     return users.findIndex((user) => user.uName.toLowerCase() === reference.toLowerCase() || user.mail.toLowerCase() === reference.toLowerCase())
 }
 
+app.get("/", function(req, res) {
+    res.redirect("/login")
+})
+
 app.get("/logout", function(req, res) {
     console.log(req);
     console.log(req.cookies);
